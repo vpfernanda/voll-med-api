@@ -1,4 +1,5 @@
 package med.voll.api.dtos;
 
-public class PacienteDTO {
+public record PacienteDTO(String nome, String telefone, String email,
+                          String cpf, EnderecoDTO endereco) {
 }
