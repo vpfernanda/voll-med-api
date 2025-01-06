@@ -10,10 +10,13 @@ import med.voll.api.enums.UFBr;
 
 @Getter
 @Setter
-@NoArgsConstructor
+//@NoArgsConstructor
 @AllArgsConstructor
 @Embeddable
 public class Endereco {
+    public Endereco() {
+    }
+
     @AttributeOverrides({
             @AttributeOverride(name = "logradouro", column = @Column(name = "endereco_logradouro")),
             @AttributeOverride(name = "numero", column = @Column(name = "endereco_numero")),
@@ -23,6 +26,8 @@ public class Endereco {
             @AttributeOverride(name="uf", column = @Column(name="endereco_uf")),
             @AttributeOverride(name="cidade", column = @Column(name="endereco_cidade"))
     })
+
+
     private String logradouro;
     private String numero;
     private String bairro;
