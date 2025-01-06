@@ -15,7 +15,7 @@ import med.voll.api.enums.Especialidade;
 public class Medico {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
     private String nome;
