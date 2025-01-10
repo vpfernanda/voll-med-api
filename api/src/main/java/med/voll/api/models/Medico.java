@@ -3,6 +3,7 @@ package med.voll.api.models;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 import med.voll.api.dtos.MedicoDTO;
 import med.voll.api.enums.Especialidade;
@@ -10,7 +11,6 @@ import med.voll.api.enums.Especialidade;
 @Table(name="medico")
 @Entity
 @Data
-@NoArgsConstructor
 @AllArgsConstructor
 public class Medico {
 
@@ -24,6 +24,7 @@ public class Medico {
 
     @Embedded
     private Endereco endereco;
+
     private String crm;
 
     @Enumerated(EnumType.STRING)
@@ -37,4 +38,7 @@ public class Medico {
         this.endereco = new Endereco(medicoDTO.endereco());
         this.especialidade = medicoDTO.especialidade();
     }
+
+    public Medico (){}
+
 }

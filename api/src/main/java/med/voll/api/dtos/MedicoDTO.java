@@ -6,6 +6,7 @@ import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Pattern;
 import med.voll.api.enums.Especialidade;
+import med.voll.api.models.Medico;
 
 public record MedicoDTO(@NotBlank
                         String nome,
@@ -26,4 +27,10 @@ public record MedicoDTO(@NotBlank
                         @NotNull
                         @Valid
                         EnderecoDTO endereco) {
+
+    public MedicoDTO(Medico medico) {
+        this(medico.getNome(), medico.getEmail(), medico.getTelefone(),
+                medico.getCrm(), medico.getEspecialidade(), new EnderecoDTO(medico.getEndereco()));
+    }
+
 }
