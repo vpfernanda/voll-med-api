@@ -5,6 +5,7 @@ import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Pattern;
 import med.voll.api.enums.UFBr;
+import med.voll.api.models.Endereco;
 
 public record EnderecoDTO(
                           @NotBlank
@@ -26,6 +27,11 @@ public record EnderecoDTO(
                           @NotBlank
                           @Pattern(regexp = "\\d{8}")
                           String cep) {
-    //logradouro, número, complemento, bairro, cidade, UF e CEP
+
+    public EnderecoDTO(Endereco endereco) {
+        this(endereco.getLogradouro(), endereco.getNumero(), endereco.getComplemento(),
+                endereco.getBairro(), endereco.getCidade(), endereco.getUf(),
+                endereco.getCep());
+    }
 
 }
