@@ -31,12 +31,6 @@ public class MedicoController {
     @GetMapping
     public Page<ListagemMedicoDTO> listarMedicos(@PageableDefault(size = 10, sort = {"nome"}) Pageable pageable) {
         return medicoRepository.findAll(pageable).map(ListagemMedicoDTO::new);
-//        List<ListagemMedicoDTO> medicoDTOs = new ArrayList<>();
-//        for (Medico medico : medicos) {
-//            medicoDTOs.add(new ListagemMedicoDTO(medico));
-//        }
-
-
     }
 
 }
