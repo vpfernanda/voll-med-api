@@ -1,8 +1,10 @@
 package med.voll.api.models;
 
 import jakarta.persistence.*;
+import jakarta.validation.Valid;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import med.voll.api.dtos.AtualizarPacienteDTO;
 import med.voll.api.dtos.CadastrarMedicoDTO;
 import med.voll.api.dtos.CadastrarPacienteDTO;
 
@@ -24,7 +26,10 @@ public class Paciente {
     @Embedded
     private Endereco endereco;
 
+    private boolean ativo;
+
     public Paciente(CadastrarPacienteDTO pacienteDTO) {
+        this.ativo = true;
         this.nome = pacienteDTO.nome();
         this.telefone = pacienteDTO.telefone();
         this.email = pacienteDTO.email();
@@ -33,4 +38,20 @@ public class Paciente {
     }
 
     public Paciente(){}
+
+    public void atualizarInformacoes(@Valid AtualizarPacienteDTO atualizarPacienteDTO) {
+        if(atualizarPacienteDTO.nome()!=null){
+            this.nome = atualizarPacienteDTO.nome();
+        }
+        if(atualizarPacienteDTO.telefone()!=null){
+            this.telefone = atualizarPacienteDTO.telefone();
+        }
+        if(atualizarPacienteDTO.enderecoDTO()!=null){
+            this.endereco.atualizarDados(atualizarPacienteDTO.enderecoDTO());
+        }
+    }
+
+    public void excluirPaciente() {
+        this.ativo = false;
+    }
 }
