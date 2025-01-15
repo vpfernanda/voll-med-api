@@ -8,27 +8,27 @@ import jakarta.validation.constraints.Pattern;
 import med.voll.api.enums.Especialidade;
 import med.voll.api.models.Medico;
 
-public record MedicoDTO(@NotBlank
+public record CadastrarMedicoDTO(@NotBlank
                         String nome,
 
-                        @NotBlank @Email
+                                 @NotBlank @Email
                         String email,
 
-                        @NotBlank
+                                 @NotBlank
                         String telefone,
 
-                        @NotBlank
+                                 @NotBlank
                         @Pattern(regexp = "\\d{4,6}")
                         String crm,
 
-                        @NotNull
+                                 @NotNull
                         Especialidade especialidade,
 
-                        @NotNull
+                                 @NotNull
                         @Valid
                         EnderecoDTO endereco) {
 
-    public MedicoDTO(Medico medico) {
+    public CadastrarMedicoDTO(Medico medico) {
         this(medico.getNome(), medico.getEmail(), medico.getTelefone(),
                 medico.getCrm(), medico.getEspecialidade(), new EnderecoDTO(medico.getEndereco()));
     }
