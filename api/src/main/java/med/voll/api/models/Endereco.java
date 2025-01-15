@@ -49,4 +49,27 @@ public class Endereco {
         this.cidade = enderecoDTO.cidade();
     }
 
+    public void atualizarDados(EnderecoDTO enderecoDTO) {
+        if(enderecoDTO.logradouro() != null) {
+            this.logradouro = enderecoDTO.logradouro();
+        }
+        if(enderecoDTO.numero() != null) {
+            this.numero = enderecoDTO.numero();
+        }
+        if(enderecoDTO.bairro() != null) {
+            this.bairro = enderecoDTO.bairro();
+        }
+        if(enderecoDTO.complemento() != null) {
+            this.complemento = enderecoDTO.complemento();
+        }
+        if(enderecoDTO.cep() != null) {
+            this.cep = enderecoDTO.cep();
+        }
+        if(enderecoDTO.uf() != null) {
+            this.uf = enderecoDTO.uf();
+        }
+        if(enderecoDTO.cidade() != null) {
+            this.cidade = enderecoDTO.cidade();
+        }
+    }
 }

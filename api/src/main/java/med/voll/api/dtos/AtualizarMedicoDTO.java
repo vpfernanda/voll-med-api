@@ -1,4 +1,7 @@
 package med.voll.api.dtos;
 
-public record AtualizarMedicoDTO() {
+import jakarta.validation.constraints.NotNull;
+
+public record AtualizarMedicoDTO(@NotNull Long id,
+                                 String nome, String telefone, EnderecoDTO enderecoDTO) {
 }
