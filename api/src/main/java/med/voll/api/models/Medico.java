@@ -3,9 +3,7 @@ package med.voll.api.models;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import med.voll.api.dtos.MedicoDTO;
+import med.voll.api.dtos.CadastrarMedicoDTO;
 import med.voll.api.enums.Especialidade;
 
 @Table(name="medico")
@@ -30,13 +28,13 @@ public class Medico {
     @Enumerated(EnumType.STRING)
     private Especialidade especialidade;
 
-    public Medico (MedicoDTO medicoDTO) {
-        this.nome = medicoDTO.nome();
-        this.telefone = medicoDTO.telefone();
-        this.email = medicoDTO.email();
-        this.crm = medicoDTO.crm();
-        this.endereco = new Endereco(medicoDTO.endereco());
-        this.especialidade = medicoDTO.especialidade();
+    public Medico (CadastrarMedicoDTO cadastrarMedicoDTO) {
+        this.nome = cadastrarMedicoDTO.nome();
+        this.telefone = cadastrarMedicoDTO.telefone();
+        this.email = cadastrarMedicoDTO.email();
+        this.crm = cadastrarMedicoDTO.crm();
+        this.endereco = new Endereco(cadastrarMedicoDTO.endereco());
+        this.especialidade = cadastrarMedicoDTO.especialidade();
     }
 
     public Medico (){}
