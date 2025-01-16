@@ -1,12 +1,10 @@
-package med.voll.api.models;
+package med.voll.api.domain.models;
 
 import jakarta.persistence.*;
 import jakarta.validation.Valid;
 import lombok.Data;
-import lombok.NoArgsConstructor;
-import med.voll.api.dtos.AtualizarPacienteDTO;
-import med.voll.api.dtos.CadastrarMedicoDTO;
-import med.voll.api.dtos.CadastrarPacienteDTO;
+import med.voll.api.domain.dtos.paciente.AtualizarPacienteDTO;
+import med.voll.api.domain.dtos.paciente.CadastrarPacienteDTO;
 
 
 @Entity

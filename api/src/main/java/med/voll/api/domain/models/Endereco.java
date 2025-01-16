@@ -1,12 +1,11 @@
-package med.voll.api.models;
+package med.voll.api.domain.models;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
-import med.voll.api.dtos.EnderecoDTO;
-import med.voll.api.enums.UFBr;
+import med.voll.api.domain.dtos.endereco.EnderecoDTO;
+import med.voll.api.domain.enums.UFBr;
 
 @Getter
 @Setter
