@@ -1,7 +1,7 @@
-package med.voll.api.dtos;
+package med.voll.api.domain.dtos.paciente;
 
-import med.voll.api.models.Endereco;
-import med.voll.api.models.Paciente;
+import med.voll.api.domain.models.Endereco;
+import med.voll.api.domain.models.Paciente;
 
 public record ExibirPacienteAtualizadoDTO(Long id, String nome, String email, String telefone,
                                           String cpf, Endereco endereco) {

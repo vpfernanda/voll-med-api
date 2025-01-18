@@ -1,11 +1,11 @@
-package med.voll.api.models;
+package med.voll.api.domain.models;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import med.voll.api.dtos.AtualizarMedicoDTO;
-import med.voll.api.dtos.CadastrarMedicoDTO;
-import med.voll.api.enums.Especialidade;
+import med.voll.api.domain.dtos.medico.AtualizarMedicoDTO;
+import med.voll.api.domain.dtos.medico.CadastrarMedicoDTO;
+import med.voll.api.domain.enums.Especialidade;
 
 @Table(name="medico")
 @Entity
